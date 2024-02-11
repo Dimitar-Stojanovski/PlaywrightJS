@@ -51,6 +51,7 @@ test.only("new user end to end full journey", async({page})=>{
     await deliveryDetailsPage.verifyAddressContainerIsIncreasing()
     await deliveryDetailsPage.verifyUserDetaisInContainer(deliveryDetails)
     await deliveryDetailsPage.clickOnContinueToPaymentBtn()
+    await page.waitForURL(/\/payment/)
     await page.pause()
    
    
