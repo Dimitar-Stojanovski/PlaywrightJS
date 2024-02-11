@@ -18,6 +18,7 @@ exports.DeliveryDetailsPage= class DeliveryDetailsPage{
         this.saveAddressForNextTimeBtn = page.getByRole('button',{name:"Save address for next time"})
         this.saveAddressContainer = page.locator('[data-qa="saved-address-container"]')
         this.savedAddressContainerValues = page.locator('//div[@data-qa=\'saved-address-container\']/p')
+        this.continueToPaymentBtn = page.getByRole('button', {name:"Continue to payment"})
     }
 
     fillDetails=async(deliveryDetails)=>{
@@ -51,5 +52,9 @@ exports.DeliveryDetailsPage= class DeliveryDetailsPage{
 
 
   
+    }
+
+    async clickOnContinueToPaymentBtn(){
+        await this.continueToPaymentBtn.click()
     }
 }

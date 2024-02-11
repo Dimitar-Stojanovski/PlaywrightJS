@@ -50,6 +50,7 @@ test.only("new user end to end full journey", async({page})=>{
     await deliveryDetailsPage.clickSaveAddresBtn()
     await deliveryDetailsPage.verifyAddressContainerIsIncreasing()
     await deliveryDetailsPage.verifyUserDetaisInContainer(deliveryDetails)
+    await deliveryDetailsPage.clickOnContinueToPaymentBtn()
     await page.pause()
    
    
