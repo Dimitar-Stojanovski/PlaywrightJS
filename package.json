@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.39.0"
+    "@playwright/test": "^1.41.2",
+    "allure-commandline": "^2.27.0",
+    "allure-playwright": "^2.12.0"
   },
   "dependencies": {
     "uuid": "^9.0.0"

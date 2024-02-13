@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Feb 13 21:52:19 CET 2024","Tue Feb 13 21:52:27 CET 2024","8375","chromium","new_user_journey.spec.js","","","","new user end to end full journey",""
