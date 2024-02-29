@@ -1,0 +1,2 @@
+{ smallestPriceIndex: 0 }
+undefined

@@ -7,6 +7,7 @@ import { LoginPage } from "../page-objects/LoginPage";
 import { RegisterPage } from "../page-objects/RegisterPage";
 import { DeliveryDetailsPage } from "../page-objects/DeliveryDetailsPage";
 import { deliveryDetails } from "../data/deliverydetails";
+import { PaymentPage } from "../page-objects/PaymentPage";
 
 test.only("new user end to end full journey", async({page})=>{
     //productPage.visit()
@@ -52,6 +53,14 @@ test.only("new user end to end full journey", async({page})=>{
     await deliveryDetailsPage.verifyUserDetaisInContainer(deliveryDetails)
     await deliveryDetailsPage.clickOnContinueToPaymentBtn()
     await page.waitForURL(/\/payment/)
+
+    //Payment Page
+    const paymentPage = new PaymentPage(page)
+ 
+    var coupon = await paymentPage.getDiscountCoupon()
+    await paymentPage.enterCouponCodeInput(coupon)
+    await paymentPage.verifyTheValueInTheDiscountInput(coupon)
+    console.warn(coupon)
     await page.pause()
    
    
