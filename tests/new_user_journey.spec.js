@@ -59,9 +59,16 @@ test.only("new user end to end full journey", async({page})=>{
  
     var coupon = await paymentPage.getDiscountCoupon()
     await paymentPage.enterCouponCodeInput(coupon)
+    await page.waitForTimeout(2000)
     await paymentPage.verifyTheValueInTheDiscountInput(coupon)
-    console.warn(coupon)
-    await page.pause()
+    await paymentPage.checkingThatDiscountMessageIsNotDisplayed()
+    
+    await paymentPage.clickOnSubmitDiscountBtn()
+    //await paymentPage.verifyThatDiscountMsgIsSuccesfullyDisplayed()
+   await paymentPage.verifyThatDiscountMsgIsSuccesfullyDisplayed()
+   await paymentPage.checkThatDiscountedPriceIsLowerThanOriginal()
+   
+
    
    
 

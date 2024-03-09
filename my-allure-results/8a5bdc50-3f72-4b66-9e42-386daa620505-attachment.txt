@@ -1,0 +1,2 @@
+{ smallestPriceIndex: 0 }
+a6cf01a278e3
