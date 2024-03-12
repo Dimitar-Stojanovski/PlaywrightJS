@@ -1,4 +1,5 @@
 const { expect } = require('@playwright/test');
+import { cardDetails } from '../data/cardDetails';
 
 
 exports.PaymentPage = class PaymentPage{
@@ -16,6 +17,15 @@ exports.PaymentPage = class PaymentPage{
         this.discountActivatedMsg = page.locator('[data-qa="discount-active-message"]')
         this.totalValue = page.locator('[data-qa="total-value"]')
         this.discountedValue = page.locator('[data-qa="total-with-discount-value"]')
+        
+        //cardDetais
+        this.creditCardOwnerInput = page.getByPlaceholder('Credit card owner')
+        this.cardNumber = page.getByPlaceholder('Credit card number')
+        this.validUntil = page.getByPlaceholder('Valid until')
+        this.cvcCard = page.getByPlaceholder('Credit card CVC')
+        this.payButton = page.getByRole('button', {name:'Pay'})
+
+
     }
 
     getDiscountCoupon = async()=>{
@@ -69,6 +79,17 @@ exports.PaymentPage = class PaymentPage{
 
         expect(discountetNumberAsInt).toBeLessThan(totalNumberAsInt)
 
+    }
+
+    fillCardDetails = async(cardDetails)=>{
+        await this.creditCardOwnerInput.fill(cardDetails.creditCardOwner)
+        await this.cardNumber.fill(cardDetails.creditCardNumber)
+        await this.validUntil.fill(cardDetails.validUntil)
+        await this.cvcCard.fill(cardDetails.cardCVC)
+    }
+
+    clickPayButton = async()=>{
+        await this.payButton.click()
     }
 
 

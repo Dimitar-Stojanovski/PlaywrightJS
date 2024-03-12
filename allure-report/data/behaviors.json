@@ -1,1 +1,1 @@
-{"uid":"b1a8273437954620fa374b796ffaacdd","name":"behaviors","children":[{"name":"new user end to end full journey","uid":"2287c52d87431dd6","parentUid":"b1a8273437954620fa374b796ffaacdd","status":"passed","time":{"start":1707857539431,"stop":1707857547806,"duration":8375},"flaky":false,"newFailed":false,"newPassed":false,"newBroken":false,"retriesCount":0,"retriesStatusChange":false,"parameters":["chromium"],"tags":[]}]}
+{"uid":"b1a8273437954620fa374b796ffaacdd","name":"behaviors","children":[]}

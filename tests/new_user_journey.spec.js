@@ -8,6 +8,7 @@ import { RegisterPage } from "../page-objects/RegisterPage";
 import { DeliveryDetailsPage } from "../page-objects/DeliveryDetailsPage";
 import { deliveryDetails } from "../data/deliverydetails";
 import { PaymentPage } from "../page-objects/PaymentPage";
+import { cardDetails } from "../data/cardDetails";
 
 test.only("new user end to end full journey", async({page})=>{
     //productPage.visit()
@@ -20,7 +21,7 @@ test.only("new user end to end full journey", async({page})=>{
     await productPage.addProductToBasket(3)
 
     const navigationPage = new NavigationPage(page);
-
+    
     const basketCount = await navigationPage.getBasketCount()
     await expect(basketCount).toBeGreaterThanOrEqual(3)
 
@@ -67,6 +68,10 @@ test.only("new user end to end full journey", async({page})=>{
     //await paymentPage.verifyThatDiscountMsgIsSuccesfullyDisplayed()
    await paymentPage.verifyThatDiscountMsgIsSuccesfullyDisplayed()
    await paymentPage.checkThatDiscountedPriceIsLowerThanOriginal()
+   await paymentPage.fillCardDetails(cardDetails);
+   await paymentPage.clickPayButton()
+   await page.waitForURL(/\/thank-you/)
+   await page.pause()
    
 
    
