@@ -10,7 +10,7 @@ import { deliveryDetails } from "../data/deliverydetails";
 import { PaymentPage } from "../page-objects/PaymentPage";
 import { cardDetails } from "../data/cardDetails";
 
-test.only("new user end to end full journey", async({page})=>{
+test("new user end to end full journey", async({page})=>{
     //productPage.visit()
 
     const productPage = new ProductPage(page)
