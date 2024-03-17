@@ -1,5 +1,5 @@
 import {expect, test} from "@playwright/test";
-import { ProductPage } from "../page-objects/productPage";
+
 import { NavigationPage } from "../page-objects/NavigationPage";
 
 import { Checkout } from "../page-objects/Checkout";
@@ -9,6 +9,7 @@ import { DeliveryDetailsPage } from "../page-objects/DeliveryDetailsPage";
 import { deliveryDetails } from "../data/deliverydetails";
 import { PaymentPage } from "../page-objects/PaymentPage";
 import { cardDetails } from "../data/cardDetails";
+import { ProductPage } from "../page-objects/ProductPage";
 
 test("new user end to end full journey", async({page})=>{
     //productPage.visit()

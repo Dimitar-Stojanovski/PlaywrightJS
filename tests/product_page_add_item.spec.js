@@ -1,5 +1,5 @@
 import { test,expect } from "@playwright/test";
-import { ProductPage } from "../page-objects/productPage";
+
 
 test.skip("Product Page add to basket", async ({page}) =>{
    await page.goto("/")
