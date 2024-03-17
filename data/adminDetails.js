@@ -1,5 +1,5 @@
 
 export const adminDetails = {
-    username:"admin",
-    password:"Admin123"
+    username:process.env.ADMIN_USER,
+    password:process.env.ADMIN_PASSWORD
 }

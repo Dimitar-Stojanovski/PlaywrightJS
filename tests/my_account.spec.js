@@ -1,3 +1,4 @@
+
 import {test} from "@playwright/test"
 import { MyAccountPage } from "../page-objects/MyAccountPage"
 import { getLoginToken } from "../api-calls/getLoginToken"
@@ -19,7 +20,7 @@ test.only('My account using cookie injection', async({page})=>{
 
     
     await accountPage.visitMyAccount()
-    await page.pause()
+    //await page.pause()
 
 
 })
